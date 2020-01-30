@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Activite;
 use App\ROLE;
+use App\User;
 class ROLEController extends Controller
 {
     public function index()
@@ -14,6 +15,14 @@ class ROLEController extends Controller
     }
     public function create()
     {   $act = Activite::all();
+        $user = User::all();
+        $role = ROLE::all();
+        foreach($user as $user_a)
+        {
+            if($user_a->pivot->isNotEmpty())
+        $user = except($user,$user_a);
+        }
+        dd($user);
         return view('ROLE/create',['act'=>$act]);
     }
     public function store()

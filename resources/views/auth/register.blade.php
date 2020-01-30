@@ -90,17 +90,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="date_naissance" class="col-md-4 col-form-label text-md-right">Role</label>
-
-                            <div class="col-md-6">
-                               <select name="roles">
-                                @foreach($roles ?? '' as $roles ?? '')
-                                    <option value="{{$role->id}}">{{$role->role}}</option>
-                                @endforeach
-                               </select>
-                            </div>
-                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

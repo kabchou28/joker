@@ -57,7 +57,6 @@ class RegisterController extends Controller
             'date_naissance'=>'required',
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'role'=>'required'
             ]);
     }
 
@@ -76,7 +75,7 @@ class RegisterController extends Controller
             'prenom' => $data['prenom'],
             'tel' => $data['tel'],
             'date_naissance' => $data['date_naissance'],
-            'null'=>'null',
         ]);
     }
+
 }
